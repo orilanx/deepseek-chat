@@ -150,7 +150,7 @@
         const DEEPSEEK_API_KEY = "sk-d654240ca2fa4568aa097746947ec6d4";   // <--- 这里要改！
         
         // 为了解决跨域问题，我们使用一个公共代理服务（仅用于学习测试）
-        const PROXY_URL = "https://corsproxy.io/?";  // 公共代理，可能会慢或偶尔失效
+       
         const API_URL = "https://api.deepseek.com/chat/completions";
         // ============================
         
@@ -189,7 +189,7 @@
         async function callDeepSeekAPI(userMessage) {
             try {
                 // 通过代理请求 DeepSeek API
-                const response = await fetch(PROXY_URL + encodeURIComponent(API_URL), {
+                const response = await fetch(API_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
